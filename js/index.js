@@ -18,7 +18,6 @@ var preloadFlag = false;
 
 function preloadImages() {
   if (document.images) {
-    login_about_vrsc_over = newImage("images/template/login-about_vrsc_over.gif");
     about_vrsc_over = newImage("images/template/about_vrsc-over.gif");
     meetings_events_over = newImage("images/template/meetings_events-over.gif");
     partners_over = newImage("images/template/partners-over.gif");
