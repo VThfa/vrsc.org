@@ -1,1 +1,200 @@
-.error {  color: #FF0000;}body {  background-color: #B2A390;  margin: 0px 0px 20px;}.contentWindow {  background-position: right top;  background-repeat: no-repeat;  background-image: url(images/template/content_window.gif);  padding-right: 80px;  padding-bottom: 0px;  padding-left: 40px;  background-color: #ffffff;  padding-top: 10px;}#footer {    background: none repeat scroll 0 0 #d0d9e5;    bottom: 0;    color: #333;    font-size: 80%;    line-height: 150%;    margin-left: 24px;    padding: 10px 0;    position: relative;    text-align: center;    width: 720px;}html, body {height: 100%;}.wrapper {min-height: 100%;height: auto !important;height: 100%;margin: 0 auto -4em;}.footer, .push {height: 4em;}.belowCopyright {  background-position: left top;  background-repeat: repeat;  background-image: url(images/template/below_copyright.gif);}h1 {  font-family: Verdana, Arial, Helvetica, sans-serif;  font-size: 16pt;  font-weight: bold;  color: #0D6826;}p {  font-family: Verdana, Arial, Helvetica, sans-serif;  font-size: 10pt;  line-height: 14pt;}.emphasizedBody {  font-family: Verdana, Arial, Helvetica, sans-serif;  font-size: 10pt;  line-height: 14pt;  font-weight: bold;  color: #0D6826;  text-decoration: none;}h2 {  font-family: Verdana, Arial, Helvetica, sans-serif;  font-size: 14pt;  font-weight: bold;  color: #0D6826;}h3 {  font-family: Verdana, Arial, Helvetica, sans-serif;  font-size: 12pt;  font-weight: bold;  color: #0D6826;}h4	{  font-family: Verdana, Arial, Helvetica, sans-serif;  font-size: 10pt;  font-weight: bold;  color: #0D6826;}.dashedLine {  border: 1px dashed #B2A390;}a:link {  font-family: Verdana, Arial, Helvetica, sans-serif;  color: #0D6826;  text-decoration: underline;}a:hover {  color: #17C146;}a:visited {  color: #7F7469;}a:active {  color: #000000;}.sidebarBody	{  font-family: Verdana, Arial, Helvetica, sans-serif;  font-size: 8pt;  line-height: 12pt;  padding-right: 12px;  padding-left: 12px;}li.documentList, ul.documentList	{  font-family: Verdana, Arial, Helvetica, sans-serif;  font-size: 8pt;  line-height: 12pt;  margin: 0;  padding: 0;  list-style-type: none;}.sidebar {  width: 151px;  float: right;  margin-left: 12px;}.smalltext {  font-family: Verdana, Arial, Helvetica, sans-serif;  font-size: 8pt;  line-height: 12pt;}.sidebarHeadline {  font-family: Verdana, Arial, Helvetica, sans-serif;  font-size: 8pt;  line-height: 12pt;  font-weight: bold;  color: #69584E;}.emphasizedSidebarBody {  font-family: Verdana, Arial, Helvetica, sans-serif;  font-size: 8pt;  line-height: 12pt;  font-weight: bold;  color: #69584E;}.sidebarOutline {  border-right-width: 2px;  border-left-width: 2px;  border-right-style: solid;  border-left-style: solid;  border-right-color: #B2A390;  border-left-color: #B2A390;  background-image:  url(images/sidebar/sidebar_check.gif);}.acrobatSidebarOutline {  border-right-width: 2px;  border-left-width: 2px;  border-right-style: solid;  border-left-style: solid;  border-right-color: #C00000;  border-left-color: #C00000;  background-image:  url(http://www.vrsc.org/images/sidebar/acrobat_check.gif);}ul,ol {  font-family: Verdana, Arial, Helvetica, sans-serif;  font-size: 10pt;  line-height: 14pt;}.formfieldpad {  margin-top: 7px;}.linkSlug {  font-family: Verdana, Arial, Helvetica, sans-serif;  font-size: 8pt;  font-style: italic;  line-height: 12pt;  color: #666666;}.greenTabBg {  background-image: url(images/sidebar/grn_tab_top_bg.gif);  background-repeat: repeat-x;  background-position: bottom;}.greenTabBgBottom {  background-image: url(images/sidebar/grn_tab_botton_bg.gif);  background-repeat: repeat-x;  background-position: top;}.highlight {  background-color: #D7E0D9;  margin: 0px 70px 0px 0px;  padding: 12px;}img	{  border: 0px;}.added	{  font-size:80%;  font-style:italic;}
+.error {
+  color: #ff0000;
+}
+body {
+  background-color: #b2a390;
+  margin: 0px 0px 20px;
+}
+.contentWindow {
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-image: url(images/template/content_window.gif);
+  padding-right: 80px;
+  padding-bottom: 0px;
+  padding-left: 40px;
+  background-color: #ffffff;
+  padding-top: 10px;
+}
+
+#footer {
+  background: none repeat scroll 0 0 #d0d9e5;
+  bottom: 0;
+  color: #333;
+  font-size: 80%;
+  line-height: 150%;
+  margin-left: 24px;
+  padding: 10px 0;
+  position: relative;
+  text-align: center;
+  width: 720px;
+}
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+.footer,
+.push {
+  height: 4em;
+}
+
+.belowCopyright {
+  background-position: left top;
+  background-repeat: repeat;
+  background-image: url(images/template/below_copyright.gif);
+}
+h1 {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 16pt;
+  font-weight: bold;
+  color: #0d6826;
+}
+p {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  line-height: 14pt;
+}
+.emphasizedBody {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  line-height: 14pt;
+  font-weight: bold;
+  color: #0d6826;
+  text-decoration: none;
+}
+h2 {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14pt;
+  font-weight: bold;
+  color: #0d6826;
+}
+h3 {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+  font-weight: bold;
+  color: #0d6826;
+}
+h4 {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  color: #0d6826;
+}
+.dashedLine {
+  border: 1px dashed #b2a390;
+}
+a:link {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  color: #0d6826;
+  text-decoration: underline;
+}
+a:hover {
+  color: #17c146;
+}
+a:visited {
+  color: #7f7469;
+}
+a:active {
+  color: #000000;
+}
+.sidebarBody {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  line-height: 12pt;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+li.documentList,
+ul.documentList {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  line-height: 12pt;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.sidebar {
+  width: 151px;
+  float: right;
+  margin-left: 12px;
+}
+.smalltext {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  line-height: 12pt;
+}
+.sidebarHeadline {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  line-height: 12pt;
+  font-weight: bold;
+  color: #69584e;
+}
+.emphasizedSidebarBody {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  line-height: 12pt;
+  font-weight: bold;
+  color: #69584e;
+}
+.sidebarOutline {
+  border-right-width: 2px;
+  border-left-width: 2px;
+  border-right-style: solid;
+  border-left-style: solid;
+  border-right-color: #b2a390;
+  border-left-color: #b2a390;
+  background-image: url(images/sidebar/sidebar_check.gif);
+}
+.acrobatSidebarOutline {
+  border-right-width: 2px;
+  border-left-width: 2px;
+  border-right-style: solid;
+  border-left-style: solid;
+  border-right-color: #c00000;
+  border-left-color: #c00000;
+  background-image: url(http://www.vrsc.org/images/sidebar/acrobat_check.gif);
+}
+ul,
+ol {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  line-height: 14pt;
+}
+.formfieldpad {
+  margin-top: 7px;
+}
+.linkSlug {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  font-style: italic;
+  line-height: 12pt;
+  color: #666666;
+}
+.greenTabBg {
+  background-image: url(images/sidebar/grn_tab_top_bg.gif);
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+.greenTabBgBottom {
+  background-image: url(images/sidebar/grn_tab_botton_bg.gif);
+  background-repeat: repeat-x;
+  background-position: top;
+}
+.highlight {
+  background-color: #d7e0d9;
+  margin: 0px 70px 0px 0px;
+  padding: 12px;
+}
+img {
+  border: 0px;
+}
+.added {
+  font-size: 80%;
+  font-style: italic;
+}
