@@ -1,0 +1,162 @@
+<?php
+require_once("includes/errorReporting.php");
+
+#   Function returns "true" if submitted address is valid, false if not
+function checkEmail ($address)	{
+	return eregi("^[a-zA-Z0-9_\.]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$", $address);
+}
+
+if($_POST['submitted'])	{	//	Form submitted; process
+	$safeName=trim($_POST['name']);
+	$safeEmail=trim($_POST['email']);
+	
+	if($safeName=="" || !checkEmail($safeEmail) || $_POST['zip']!="5")	{
+		$errorMessage="<p id=\"error\">You need to enter your name, a valid email address, and the sum of 1 + 4, which is 5. The math prevents spambots from completing the form. Please try again.</p>";
+	}
+	else	{
+		$to="info@housingawareness.org";
+		$subject="Awareness campaign: Speaker request";
+		$message=$safeName . "\n" . $safeEmail;
+		
+		if(!mail($to,$subject,$message,"From:" . $safeName . "<" . $safeEmail . ">"))	{
+			$errorMessage="<p id=\"error\">There was a problem submitting your request. Please try again later or <a href=\"&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#104;&#111;&#117;&#115;&#105;&#110;&#103;&#97;&#119;&#97;&#114;&#101;&#110;&#101;&#115;&#115;&#46;&#111;&#114;&#103;\">&#101;&#109;&#97;&#105;&#108;&#32;&#117;&#115;</a>  .</p>";
+		}
+		else	{
+			$successMessage="<p id=\"success\">Your request has been submitted. We'll be in touch with you soon.</p>";
+		}
+		unset($_POST);
+		unset($safeEmail);
+		unset($safeName);
+	}
+}	//	END form submitted; process
+
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Vermont Housing Awareness Campaign</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="reply-to" content="info@housingawareness.org" />
+	<meta name="copyright" content="&copy; 2002-<?php echo date("Y"); ?> Vermont Housing Finance Agency" />
+	<meta name="description" content="Promoting planning and development of housing for all Vermonters" />
+	<meta name="keywords" content="houses,homes,shortage,crisis,apartments,economic,economy,development,affordable,sprawl,new,england,communities,neighborhoods,planning,planners,smart,growth,misconceptions,nimby,zoning,code,permitting,act 250,bankers,homebuilders,developers,realtors" />
+	<meta name="language" content="English" />
+	<meta name="document-class" content="Published" />
+	<meta name="document-type" content="Public" />
+	<meta name="document-rating" content="Safe for Kids" />
+	<meta name="document-distribution" content="Global" />
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	<link href="styles/default.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="includes/javascript/validate.js"></script>
+	<!--<script src="includes/javascript/prototype.js" type="text/javascript"></script>
+	<script src="includes/javascript/scriptaculous.js" type="text/javascript"></script>-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1 id="logo"><span>Vermont Housing Awareness Campaign</span></h1>
+			<p id="slogan"><span><em>Housing is the foundation of Vermont's communities</em></span></p>
+		</div>	<!-- END #header -->
+		
+		<div id="content">
+			<div id="mainContent">
+				<p>Since 2002, the <strong>Vermont Housing Awareness Campaign</strong> has worked to increase public awareness for the need of affordable housing for all Vermonters. This Web site is a resource for advocates, politicians, students, members of the media and others looking for information about housing in Vermont.</p>
+				<div class="mod">
+					<h2>Publications</h2>
+					<ul>
+						<li><a href="http://www.vhfa.org/documents/housing-wages-2011.pdf">"Between a Rock and a Hard Place: Housing and Wages in Vermont"</a> (2011)</li>
+						<li><a href="http://www.vhfa.org/documents/mythsbrochure.pdf">"Affordable Housing in Vermont: Myths &amp; Realities"</a> brochure</li>
+						<li><strong><a href="http://www.vhfa.org/resources/publications.php">More publications &#187;</a></strong></li>
+					</ul>
+				</div>
+				<div class="mod">
+					<h2>Housing news</h2>
+					<ul>
+						<li>Vermont Housing Finance Agency <a href="http://www.vhfa.org/about/news/blog/">"Housing Matters" blog</a></li>
+						<li><a href="http://www.vtaffordablehousing.org/news/">Vermont Affordable Housing Coalition news</a></li>
+					</ul>
+				</div>
+				<div class="mod last">
+					<h2>Resources</h2>
+					<p>The Vermont Department of Economic, Housing and Community Development publishes a comprehensive list of Vermont housing organizations:</p>
+					<p><strong><a href="http://accd.vermont.gov/strong_communities/housing/housing_resources/housing_orgs">Download the list &#187;</a></strong></p>
+				</div>
+				
+				<div id="videoBox" style="background-color: #cbc4a8; height:344px; width:100%ace;">
+					<!--<h2 id="video"><span>Video</span></h2>-->
+					<!--<object width="425" height="344">
+						<param name="movie" value="http://www.youtube.com/v/2KWTMNY8xJA&hl=en&fs=1&rel=0"></param>
+						<param name="allowFullScreen" value="true"></param>
+						<param name="allowscriptaccess" value="always"></param>
+						<embed src="http://www.youtube.com/v/2KWTMNY8xJA&hl=en&fs=1&rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed>
+						<noembed><a href="http://www.youtube.com/watch?v=2KWTMNY8xJA">Go to YouTube to view our video</a></noembed>
+					</object>-->
+				</div>
+				
+			</div>	<!-- END #mainContent -->
+			<div id="sidebar">
+				<h2><span>Let us help you!</span></h2>
+				<?php
+				
+					if($errorMessage)	{
+						echo($errorMessage);
+					}
+					elseif($successMessage)	{
+						echo($successMessage);
+					}
+					
+				?>
+				<p>Housing experts are available to <strong>speak at your Vermont event</strong> &#8212; whether it's a town planners' meeting, economic development conference, chamber breakfast or other community gathering.</p>
+				<p>There's <strong>no charge</strong> for this service.</p>
+				
+				<h3><span>Request a speaker</span></h3>
+				<p>Send an email to <a href="mailto:lblack-plumeau@vhfa.org">request a speaker</a>.</p>
+			<!--	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+					<fieldset><input name="name" id="name" type="text" value="<?php echo htmlentities(stripslashes($safeName)); ?>" />
+					<label for="name">Your name</label>
+					<input name="email" id="email" type="text" value="<?php echo htmlentities(stripslashes($safeEmail)); ?>" />
+					<label for="email">Email address</label>
+					<input name="zip" id="zip" type="text" value="<?php echo htmlentities(stripslashes($_POST['zip'])); ?>" />
+					<label for="zip">Enter the sum of one and four</label>
+					<input type="hidden" name="submitted" value="yes" />
+					<input type="image" src="images/submit.gif" id="submit" name="submit" value="submit" alt="submit" />
+					</fieldset>
+				</form>-->
+				
+				<img src="images/quechee.jpg" width="260" height="170" alt="houses in quechee" />
+				
+				<h4><span>Contact us </span></h4>
+				<address>
+				Vermont Housing Awareness Campaign<br />
+				c/o Vermont Housing Finance Agency<br />
+				164 Saint Paul St., P.O. Box 408<br />
+				Burlington, VT 05402-0408<br />
+				<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#104;&#111;&#117;&#115;&#105;&#110;&#103;&#97;&#119;&#97;&#114;&#101;&#110;&#101;&#115;&#115;&#46;&#111;&#114;&#103;">&#105;&#110;&#102;&#111;&#64;&#104;&#111;&#117;&#115;&#105;&#110;&#103;&#97;&#119;&#97;&#114;&#101;&#110;&#101;&#115;&#115;&#46;&#111;&#114;&#103;</a>  
+				</address>
+				
+				<ul id="credits">
+					<li>Illustration of Winooski: James Cagle</li>
+					<li>Photo of Quechee: Craig Bailey</li>
+				</ul>
+			
+			</div>	<!-- END #sidebar -->
+			<br style="clear:both;" />
+		</div>	<!-- END #content -->
+		<div id="footer">
+			<p><a href="legal.php">Legal/privacy</a></p>
+			<p id="copyright">&copy; 2002-<?php echo date('Y'); ?> <a href="http://www.vhfa.org">Vermont Housing Finance Agency</a></p>
+			<br />
+		</div>	<!-- END #footer -->
+	</div>	<!-- END #wrapper -->
+	<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4347703-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
